@@ -1,0 +1,37 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings (H2 In-Memory) -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatetutorials</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">joglesar</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapping files/classes -->
+        <mapping class="com.example.entity.EmployeeEntity"/>
+        <mapping class="com.example.entity.AccountEntity"/>
+
+        <mapping class="com.onetoone.User"/>
+        <mapping class="com.onetoone.Profile"/>
+
+        <mapping class="com.onetomany.Customer"/>
+        <mapping class="com.onetomany.Order"/>
+
+        <mapping class="com.multipleNamedQueries.Purchaser"/>
+
+        <mapping class="com.manytomany.Course"/>
+        <mapping class="com.manytomany.Student"/>
+
+    </session-factory>
+</hibernate-configuration>
